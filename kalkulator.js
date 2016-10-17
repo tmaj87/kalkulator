@@ -6,4 +6,4 @@ $(function () {
         $('.form-group').hide();
         $('.form-group.' + $(this).attr('data-typ')).show();
     })
-})
+});

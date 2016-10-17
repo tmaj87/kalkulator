@@ -3,80 +3,78 @@
 class Calculator
 {
 
-    const WSPOLCZYNNIK_WODY = .335;
+    const WATER_PER_GRAM = .335;
 
-    private $baza_danych = array();
-    private $suma_NaOH = 0;
-    private $suma_wody = 0;
-    private $suma_olei = 0;
-    private $typ_zasady = 'NaOH';
+    private $database = array();
+    private $alkali_sum = 0;
+    private $alkali_type = 'NaOH';
+    private $water_sum= 0;
+    private $oil_sum = 0;
 
     public function __construct($tablica, $typ)
     {
-        $this->baza_danych = $this->sortuj_tablice($tablica);
-        $this->typ_zasady = $this->filtruj_typ($typ);
-        $this->oblicz_zasade();
+        $this->database = $this->sortByGram($tablica);
+        $this->alkali_type = $this->checkType($typ);
+        $this->calculate();
     }
 
-    private function sortuj_tablice($tablica)
+    private function sortByGram($tablica)
     {
-        uasort($tablica, array(__CLASS__, 'porownaj'));
+        uasort($tablica, array(__CLASS__, 'compare'));
         return $tablica;
     }
 
-    private function oblicz_zasade()
+    private function calculate()
     {
-        foreach ($this->baza_danych as $olej => $ile) {
-            $this->suma_olei += $ile['gram'];
-            $this->suma_NaOH += $ile['gram'] * $ile[$this->typ_zasady];
-            $this->suma_wody += $ile['gram'] * self::WSPOLCZYNNIK_WODY;
+        foreach ($this->database as $olej => $ile) {
+            $this->oil_sum += $ile['gram'];
+            $this->alkali_sum += $ile['gram'] * $ile[$this->alkali_type];
+            $this->water_sum += $ile['gram'] * self::WATER_PER_GRAM;
         }
     }
 
-    public function tablica_olei()
+    public function oilTable()
     {
         $tablica = array();
-        foreach ($this->baza_danych as $olej => $ile) {
+        foreach ($this->database as $olej => $ile) {
             $tablica[$olej] = array(
                 'gram' => $ile['gram'],
-                'udzial' => round($ile['gram'] / $this->suma_olei * 100)
+                'percent' => round($ile['gram'] / $this->oil_sum * 100)
             );
         }
         return $tablica;
     }
 
-    public function potrzebna_woda()
+    public function requiredWater()
     {
-        return round($this->suma_wody);
+        return round($this->water_sum);
     }
 
-    public function suma_olei()
+    public function oilSum()
     {
-        return round($this->suma_olei);
+        return round($this->oil_sum);
     }
 
-    public function tablica_zmydlenia() // $start, $stop
+    public function saponificationChart()
     {
         $tablica = array();
         for ($procent = 100; $procent >= 90; $procent--) {
-            $tablica[$procent] = array(
-                'gram' => round($this->suma_NaOH * $procent / 100, 2),
-            );
+            $tablica[$procent] = round($this->alkali_sum * $procent / 100, 2);
         }
         return $tablica;
     }
 
-    public function masa_calkowita()
+    public function totalMass()
     {
-        return round($this->suma_olei + $this->suma_wody + $this->suma_NaOH);
+        return round($this->oil_sum + $this->water_sum + $this->alkali_sum);
     }
 
-    public function sklad()
+    public function inci()
     {
         return '';
     }
 
-    private function porownaj($a, $b)
+    private function compare($a, $b)
     {
         if ($a['gram'] == $b['gram']) {
             return 0;
@@ -84,13 +82,13 @@ class Calculator
         return ($a['gram'] > $b['gram']) ? -1 : 1;
     }
 
-    private function filtruj_typ($typ)
+    private function checkType($typ)
     {
         switch ($typ) {
             case 'KOH':
                 return 'KOH';
             default:
-                return $this->typ_zasady;
+                return $this->alkali_type;
         }
     }
 }

@@ -7,15 +7,15 @@ class Rank
 
     private $database;
     private $ranking;
-    private $db_handle;
+    private $wpdb;
+    const TABLE = "RankingKalkulatora";
 
     public function __construct($database)
     {
         $this->ranking = $database;
         // wordpress database object
         global $wpdb;
-        $this->db_handle = $wpdb;
-//
+        $this->wpdb = $wpdb;
         $this->is_table_present();
 
     }
@@ -32,6 +32,6 @@ class Rank
 
     private function is_table_present()
     {
-        $this->db_handle.get_var( "SELECT COUNT(*) FROM $wpdb->users" );
+        return $this->wpdb . get_var("SELECT COUNT(*) FROM $this->TABLE");
     }
 }

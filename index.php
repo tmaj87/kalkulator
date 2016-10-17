@@ -1,17 +1,4 @@
-<?php
-
-session_start();
-$database = json_decode(file_get_contents('baza_zmydlania.json'), true);
-
-function __autoload($class)
-{
-    require_once 'class/' . $class . '.php';
-}
-
-$form_data = Parser::parse($database);
-$calculator = new Calculator($form_data, Parser::getAlkali());
-
-?>
+<?php require_once('init.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +45,7 @@ $calculator = new Calculator($form_data, Parser::getAlkali());
                         <th>Waga (g)</th>
                         <th>Udział (%)</th>
                     </tr>
-                    <?php foreach ($calculator->tablica_olei() as $key => $row) { ?>
+                    <?php foreach ($calculator->oilTable() as $key => $row) { ?>
                         <tr>
                             <td><?php echo $form_data[$key]['nazwa']; ?></td>
                             <td><?php echo $row['gram']; ?>g</td>
@@ -67,12 +54,12 @@ $calculator = new Calculator($form_data, Parser::getAlkali());
                     <?php } ?>
                     <tr>
                         <td></td>
-                        <td><b><?php echo $calculator->suma_olei(); ?>g</b></td>
+                        <td><b><?php echo $calculator->oilSum(); ?>g</b></td>
                         <td></td>
                     </tr>
                 </table>
-                <h4>Należy również dodać <b><?php echo $calculator->potrzebna_woda(); ?>g</b> wody.</h4>
-                <p>inci: <?php echo $calculator->sklad(); ?></p>
+                <h4>Należy również dodać <b><?php echo $calculator->requiredWater(); ?>g</b> wody.</h4>
+                <p>inci: <?php echo $calculator->inci(); ?></p>
             </div>
 
             <div class="col-md-4">
@@ -81,14 +68,14 @@ $calculator = new Calculator($form_data, Parser::getAlkali());
                         <th><?php echo Parser::getAlkali(); ?> (g)</th>
                         <th>Zmydlenie (%)</th>
                     </tr>
-                    <?php foreach ($calculator->tablica_zmydlenia() as $percent => $alkali) { ?>
+                    <?php foreach ($calculator->saponificationChart() as $percent => $alkali) { ?>
                         <tr>
                             <td><?php echo $alkali['gram']; ?>g</td>
                             <td><?php echo $percent; ?>%</td>
                         </tr>
                     <?php } ?>
                 </table>
-                <h4>Całkowita masa mydła to ok. <b><?php echo $calculator->masa_calkowita(); ?>g</b></h4>
+                <h4>Całkowita masa mydła to ok. <b><?php echo $calculator->totalMass(); ?>g</b></h4>
             </div>
         </div>
     <?php } ?>
