@@ -1,0 +1,324 @@
+[
+	{
+		"nazwa": "olej arganowy",
+		"NaOH": 0.1360,
+		"KOH": 0.1908,
+		"typ": "olej",
+		"inci": "Argania spinosa Kernel Oil"
+	},
+	{
+		"nazwa": "olej z awokado",
+		"NaOH": 0.1335,
+		"KOH": 0.1873,
+		"typ": "olej",
+		"inci": "Persea gratissima (Avocado) Oil"
+	},
+	{
+		"nazwa": "olej herbaciany (kameliowy)",
+		"NaOH": 0.1360,
+		"KOH": 0.1908,
+		"typ": "olej",
+		"inci": "Camellia Kissi Seed Oil"
+	},
+	{
+		"nazwa": "olej konopny",
+		"NaOH": 0.1345,
+		"KOH": 0.1887,
+		"typ": "olej",
+		"inci": "Cannabis Sativa (Hemp) Seed Oil"
+	},
+	{
+		"nazwa": "olej szafranowy (krokoszowy)",
+		"NaOH": 0.1355,
+		"KOH": 0.1901,
+		"typ": "olej",
+		"inci": "Carthamus Tinctorius (Safflower) Oil"
+	},
+	{
+		"nazwa": "masło babassu",
+		"NaOH": 0.1750,
+		"KOH": 0.2255,
+		"typ": "masło",
+		"inci": "Orbignya Oleifera Seed Oil"
+	},
+	{
+		"nazwa": "olej arachidowy",
+		"NaOH": 0.1356,
+		"KOH": 0.1902,
+		"typ": "olej",
+		"inci": "Arachis hypogaea oil"
+	},
+	{
+		"nazwa": "olej annato",
+		"NaOH": 0.1330,
+		"KOH": 0.1866,
+		"typ": "olej",
+		"inci": "Bixa Orellana Seed Oil"
+	},
+	{
+		"nazwa": "olej z pestek moreli",
+		"NaOH": 0.1350,
+		"KOH": 0.1894,
+		"typ": "olej",
+		"inci": "Prunus Armeniaca Kernel Oil"
+	},
+	{
+		"nazwa": "olej z orzechów laskowych",
+		"NaOH": 0.1370,
+		"KOH": 0.1922,
+		"typ": "olej",
+		"inci": "Corylus Avellana (Hazelnut) Seed Oil"
+	},
+	{
+		"nazwa": "olej jojoba",
+		"NaOH": 0.0660,
+		"KOH": 0.0926,
+		"typ": "olej",
+		"inci": "Simmondsia Chinensis (Jojoba) Seed Oil"
+	},
+	{
+		"nazwa": "masło kakaowe",
+		"NaOH": 0.1380,
+		"KOH": 0.1936,
+		"typ": "masło",
+		"inci": "Theobroma Cacao (Cocoa) Seed Butte"
+	},
+	{
+		"nazwa": "masło kokosowe",
+		"NaOH": 0.1830,
+		"KOH": 0.2567,
+		"typ": "masło",
+		"inci": "Cocos Nucifera (Coconut) Oil"
+	},
+	{
+		"nazwa": "olej z pestek dyni",
+		"NaOH": 0.1350,
+		"KOH": 0.1894,
+		"typ": "olej",
+		"inci": "Cucurbita Pepo (Pumpkin) Seed Oil"
+	},
+	{
+		"nazwa": "olej lniany",
+		"NaOH": 0.1340,
+		"KOH": 0.1880,
+		"typ": "olej",
+		"inci": "Linum usitalissimum (Linum) seed oil"
+	},
+	{
+		"nazwa": "olej laurowy",
+		"NaOH": 0.1405,
+		"KOH": 0.1971,
+		"typ": "olej",
+		"inci": "Laurus Nobilis Oil"
+	},
+	{
+		"nazwa": "masło mafura",
+		"NaOH": 0.1380,
+		"KOH": 0.1936,
+		"typ": "masło",
+		"inci": "Trichilia emetica seed oil"
+	},
+	{
+		"nazwa": "olej kukurydziany",
+		"NaOH": 0.1360,
+		"KOH": 0.1908,
+		"typ": "olej",
+		"inci": "Zea Mays (Corn) Oil"
+	},
+	{
+		"nazwa": "olej migdałowy",
+		"NaOH": 0.1365,
+		"KOH": 0.1915,
+		"typ": "olej",
+		"inci": "Prunus Amygdalus Dulcis (Sweet Almond) Oil"
+	},
+	{
+		"nazwa": "masło mango",
+		"NaOH": 0.1339,
+		"KOH": 0.1878,
+		"typ": "masło",
+		"inci": "Mangifera Indica (Mango) Seed Butter"
+	},
+	{
+		"nazwa": "olej makadamia",
+		"NaOH": 0.1391,
+		"KOH": 0.1951,
+		"typ": "olej",
+		"inci": "Macadamia ternifolia Seed Oil"
+	},
+	{
+		"nazwa": "olej marakuja",
+		"NaOH": 0.1290,
+		"KOH": 0.1810,
+		"typ": "olej",
+		"inci": "Passiflora Incarnata seed Oil"
+	},
+	{
+		"nazwa": "olej z nasion maku",
+		"NaOH": 0.1383,
+		"KOH": 0.1940,
+		"typ": "olej",
+		"inci": "Papaver somniferum (Poppy) Seeds"
+	},
+	{
+		"nazwa": "olej z wiesiołka",
+		"NaOH": 0.1345,
+		"KOH": 0.1887,
+		"typ": "olej",
+		"inci": "Oenothera Biennis Seed Oil"
+	},
+	{
+		"nazwa": "oliwa z oliwek",
+		"NaOH": 0.1345,
+		"KOH": 0.1887,
+		"typ": "olej",
+		"inci": "Olea Europaea (Olive) Fruit Oil"
+	},
+	{
+		"nazwa": "olej palmowy",
+		"NaOH": 0.1405,
+		"KOH": 0.1971,
+		"typ": "olej",
+		"inci": "Elaeis Guineensis Oil"
+	},
+	{
+		"nazwa": "olej palmowy z nasion",
+		"NaOH": 0.1680,
+		"KOH": 0.2357,
+		"typ": "olej",
+		"inci": "Elaeis Guineensis (Palm) Kernel Oil"
+	},
+	{
+		"nazwa": "olej rzepakowy",
+		"NaOH": 0.1354,
+		"KOH": 0.1899,
+		"typ": "olej",
+		"inci": "Brassica Campestris (Oleifera Oil)"
+	},
+	{
+		"nazwa": "olej ryżowy",
+		"NaOH": 0.1345,
+		"KOH": 0.1887,
+		"typ": "olej",
+		"inci": "Oryza sativa"
+	},
+	{
+		"nazwa": "olej rycynowy",
+		"NaOH": 0.1286,
+		"KOH": 0.1804,
+		"typ": "olej",
+		"inci": "Ricinus Communis"
+	},
+	{
+		"nazwa": "olej z czarnuszki",
+		"NaOH": 0.1350,
+		"KOH": 0.1894,
+		"typ": "olej",
+		"inci": "Nigella Sativa (Black Seed) Seed Oil"
+	},
+	{
+		"nazwa": "olej sezamowy",
+		"NaOH": 0.1376,
+		"KOH": 0.1930,
+		"typ": "olej",
+		"inci": "Sesamum indicum seed oil"
+	},
+	{
+		"nazwa": "masło shea (karite)",
+		"NaOH": 0.1282,
+		"KOH": 0.1798,
+		"typ": "masło",
+		"inci": "Butyrospermum Parkii (Shea Butter)"
+	},
+	{
+		"nazwa": "olej sojowy",
+		"NaOH": 0.1355,
+		"KOH": 0.1900,
+		"typ": "olej",
+		"inci": "Glycine Soja oil"
+	},
+	{
+		"nazwa": "olej słonecznikowy",
+		"NaOH": 0.1350,
+		"KOH": 0.1894,
+		"typ": "olej",
+		"inci": "Helianthus Annuus (Sunflower) Seed Oil"
+	},
+	{
+		"nazwa": "olej z pestek winogron",
+		"NaOH": 0.1285,
+		"KOH": 0.1802,
+		"typ": "olej",
+		"inci": "Vitis vinifera Seed Oil"
+	},
+	{
+		"nazwa": "masło ucuuba",
+		"NaOH": 0.1220,
+		"KOH": 0.1711,
+		"typ": "masło",
+		"inci": "Virola Sebifera Nut Oil"
+	},
+	{
+		"nazwa": "olej z orzecha włoskiego",
+		"NaOH": 0.1335,
+		"KOH": 0.1873,
+		"typ": "olej",
+		"inci": "Juglans regia (Walnut) Seed Oil"
+	},
+	{
+		"nazwa": "olej z kiełków pszenicy",
+		"NaOH": 0.1310,
+		"KOH": 0.1838,
+		"typ": "olej",
+		"inci": "Triticum vulgare (Wheat) Germ Oil"
+	},
+	{
+		"nazwa": "olej z pestek dzikiej róży",
+		"NaOH": 0.1359,
+		"KOH": 0.1936,
+		"typ": "olej",
+		"inci": "Rosa Canina Seed Oil"
+	},
+	{
+		"nazwa": "wosk pszczeli żółty",
+		"NaOH": 0.0690,
+		"KOH": 0.0968,
+		"typ": "wosk",
+		"inci": "Cera Flava"
+	},
+	{
+		"nazwa": "wosk pszczeli biały",
+		"NaOH": 0.0690,
+		"KOH": 0.0968,
+		"typ": "wosk",
+		"inci": "Cera Alba"
+	},
+	{
+		"nazwa": "wosk carnauba",
+		"NaOH": 0.0690,
+		"KOH": 0.0968,
+		"typ": "wosk",
+		"inci": "Cera carnauba"
+	},
+	{
+		"nazwa": "lanolina",
+		"NaOH": 0.0750,
+		"KOH": 0.1052,
+		"typ": "wosk",
+		"inci": "Cera Lana, Lanolin"
+	},
+	{
+		"nazwa": "kwas stearynowy",
+		"NaOH": 0.1460,
+		"KOH": 0.2048,
+		"typ": "kwas",
+		"inci": "Stearic Acid"
+	},
+	{
+		"nazwa": "kwas cytrynowy",
+		"NaOH": 0.5710,
+		"KOH": 0.8010,
+		"typ": "kwas",
+		"inci": "Citric Acid"
+	}
+]
