@@ -1,7 +1,5 @@
 <?php
 
-define('SHORTINIT', TRUE);
-
 class Rank
 {
 
@@ -14,6 +12,8 @@ class Rank
     {
         $this->ranking = $database;
         // wordpress database object
+        define('SHORTINIT', TRUE);
+        // ...
         global $wpdb;
         $this->wpdb = $wpdb;
         $this->is_table_present();
