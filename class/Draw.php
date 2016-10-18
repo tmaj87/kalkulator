@@ -7,7 +7,7 @@ class Draw
         $filename = 'draw/' . $name . '.php';
         if (file_exists($filename)) {
             ob_start(array(__CLASS__, 'replace'));
-            global $database, $form_data, $calculator; // TODO use $GLOBALS?
+            global $form_data, $calculator; // TODO use $GLOBALS?
             include $filename;
             ob_end_flush();
         }
