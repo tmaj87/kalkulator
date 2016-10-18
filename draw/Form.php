@@ -14,7 +14,7 @@
             <li><a href="#" data-typ="kwas">Kwasy</a></li>
         </ul>
     </h4>
-    <?php foreach ($database as $record) {
+    <?php foreach (Parser::getDatabase() as $record) {
         $id = Parser::getIdFor($record['nazwa']);
         $isActive = !empty($form_data[$id]['gram']);
         ?>

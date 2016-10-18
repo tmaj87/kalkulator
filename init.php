@@ -8,6 +8,5 @@ function __autoload($class)
 }
 
 // global variables
-$database = json_decode(file_get_contents('baza_zmydlania.json'), true);
-$form_data = Parser::parse($database);
+$form_data = Parser::parseDatabase();
 $calculator = new Calculator($form_data, Parser::getBase());

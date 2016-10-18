@@ -3,10 +3,10 @@
 class Parser
 {
 
-    static function parse($database)
+    static function parseDatabase()
     {
         $array = array();
-        foreach ($database as $record) {
+        foreach (self::getDatabase() as $record) {
             $id = self::getIdFor($record['nazwa']);
             $rank = Rank::getFor($id);
 
@@ -34,5 +34,10 @@ class Parser
     {
         $string = strtr($name, array(' ' => ''));
         return base64_encode($string);
+    }
+
+    static function getDatabase()
+    {
+        return json_decode(file_get_contents('baza_zmydlania.json'), true);
     }
 }
