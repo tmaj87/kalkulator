@@ -1,4 +1,3 @@
-<?php global $database, $form_data, $calculator; ?>
 <? if (!empty($form_data)) { ?>
     <div class="row">
         <div class="col-md-4 col-md-offset-2">
@@ -28,12 +27,12 @@
         <div class="col-md-4">
             <table id="zasada" class="table table-hover">
                 <tr>
-                    <th><?php echo Parser::getAlkali(); ?> (g)</th>
+                    <th><?php echo Parser::getBase(); ?> (g)</th>
                     <th>Zmydlenie (%)</th>
                 </tr>
-                <?php foreach ($calculator->saponificationChart() as $percent => $alkali) { ?>
+                <?php foreach ($calculator->saponificationChart() as $percent => $gram) { ?>
                     <tr>
-                        <td><?php echo $alkali['gram']; ?>g</td>
+                        <td><?php echo $gram; ?>g</td>
                         <td><?php echo $percent; ?>%</td>
                     </tr>
                 <?php } ?>

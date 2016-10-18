@@ -25,9 +25,9 @@ class Parser
         return filter_input(INPUT_POST, $name, FILTER_SANITIZE_NUMBER_INT);
     }
 
-    static function getAlkali()
+    static function getBase()
     {
-        return filter_input(INPUT_POST, 'alkali', FILTER_SANITIZE_STRING);
+        return filter_input(INPUT_POST, 'base', FILTER_SANITIZE_STRING);
     }
 
     static function getIdFor($name)

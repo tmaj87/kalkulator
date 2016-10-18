@@ -1,10 +1,8 @@
-<?php global $database, $form_data, $calculator; ?>
-
 <form action="#" method="post" class="form-inline text-center">
-    <input type="radio" <?php echo Parser::getAlkali() == 'NaOH' ? 'checked="checked"' : ''; ?> value="NaOH"
-           name="alkali"> NaOH
-    <input type="radio" <?php echo Parser::getAlkali() == 'KOH' ? 'checked="checked"' : ''; ?> value="KOH"
-           name="alkali"> KOH
+    <input type="radio" <?php echo Parser::getBase() == 'NaOH' ? 'checked="checked"' : ''; ?> value="NaOH"
+           name="base"> NaOH
+    <input type="radio" <?php echo Parser::getBase() == 'KOH' ? 'checked="checked"' : ''; ?> value="KOH"
+           name="base"> KOH
     <h4>
         Wybierz kategorię, wpisz gramaturę <span class="glyphicon glyphicon-hand-down"
                                                  aria-hidden="true"></span> i
