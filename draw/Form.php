@@ -1,3 +1,5 @@
+<?php global $database, $form_data, $calculator; ?>
+
 <form action="#" method="post" class="form-inline text-center">
     <input type="radio" <?php echo Parser::getAlkali() == 'NaOH' ? 'checked="checked"' : ''; ?> value="NaOH"
            name="alkali"> NaOH

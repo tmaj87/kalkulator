@@ -44,7 +44,7 @@
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <?php Darw::Form(); ?>
+            <?php Draw::Form(); ?>
         </div>
     </div>
 </div>

@@ -6,10 +6,14 @@ class Draw
     {
         $filename = 'draw/' . $name . '.php';
         if (file_exists($filename)) {
-            ob_start();
+            ob_start(array(__CLASS__, 'replace'));
             include $filename;
-            echo preg_replace(array('/\s{2,}/', '/[\t\n\r]/'), array(' ', ''), ob_get_contents()) . PHP_EOL;
-            ob_end_clean();
+            ob_end_flush();
         }
+    }
+
+    private static function replace($string)
+    {
+        return preg_replace(array('/\s{2,}/', '/[\t\n\r]/'), array(' ', ''), $string);
     }
 }
