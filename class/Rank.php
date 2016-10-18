@@ -6,7 +6,7 @@ class Rank
     private $database;
     private $ranking;
     private $wpdb;
-    const TABLE = "RankingKalkulatora";
+    const TABLE = "RANK_TABLE";
 
     public function __construct($database)
     {

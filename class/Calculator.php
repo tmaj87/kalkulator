@@ -36,10 +36,10 @@ class Calculator
     public function oilTable()
     {
         $tablica = array();
-        foreach ($this->database as $olej => $ile) {
-            $tablica[$olej] = array(
-                'gram' => $ile['gram'],
-                'percent' => round($ile['gram'] / $this->oil_sum * 100)
+        foreach ($this->database as $oil => $row) {
+            $tablica[$oil] = array(
+                'gram' => $row['gram'],
+                'percent' => round($row['gram'] / $this->oil_sum * 100)
             );
         }
         return $tablica;
