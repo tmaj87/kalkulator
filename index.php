@@ -30,7 +30,8 @@
         <div class="col-md-10 col-md-offset-1">
             <p>1. Wybierz zasadę</p>
             <p>2. Wybierz procent zmydlenia*</p>
-            <p>3. </p>
+            <p>3. ...</p>
+            <p>4. PROFIT</p>
         </div>
     </div>
 </div>

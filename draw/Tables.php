@@ -11,7 +11,7 @@
                     <tr>
                         <td><?php echo $form_data[$key]['nazwa']; ?></td>
                         <td><?php echo $row['gram']; ?>g</td>
-                        <td><?php echo $row['udzial']; ?>%</td>
+                        <td><?php echo $row['percent']; ?>%</td>
                     </tr>
                 <?php } ?>
                 <tr>

@@ -71,7 +71,11 @@ class Calculator
 
     public function inci()
     {
-        return '';
+        $string = "";
+        foreach ($this->database as $oil => $row) {
+            $string .= $row['inci'];
+        }
+        return $string;
     }
 
     private function compare($a, $b)
