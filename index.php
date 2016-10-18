@@ -36,12 +36,15 @@
 </div>
 
 <div class="container-fluid">
-
-    <?php Draw::Tables(); ?>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <?php Draw::Tables(); ?>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-           <?php Draw::Form(); ?>
+            <?php Darw::Form(); ?>
         </div>
     </div>
 </div>

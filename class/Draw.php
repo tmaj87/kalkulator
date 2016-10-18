@@ -2,17 +2,14 @@
 
 class Draw
 {
-    private static $directory = 'draw/';
-    private const FROM = array('/\s{2,}/', '/[\t\n\r]/');
-    private const TO = array(' ', '');
-
-    static public function __callStatic($name, $arguments)
+    public static function __callStatic($name, $arguments)
     {
-        $filename = self::$directory . $name . '.php';
+        $filename = 'draw/' . $name . '.php';
         if (file_exists($filename)) {
             ob_start();
             include $filename;
-            echo preg_replace(self::FROM, self::TO, ob_get_clean()) . PHP_EOL;
+            echo preg_replace(array('/\s{2,}/', '/[\t\n\r]/'), array(' ', ''), ob_get_contents()) . PHP_EOL;
+            ob_end_clean();
         }
     }
 }
