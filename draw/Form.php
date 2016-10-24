@@ -1,8 +1,15 @@
-<form action="#" method="post" class="form-inline text-center">
-    <input type="radio" <?php echo Parser::getBase() == 'NaOH' ? 'checked="checked"' : ''; ?> value="NaOH"
-           name="base"> NaOH
-    <input type="radio" <?php echo Parser::getBase() == 'KOH' ? 'checked="checked"' : ''; ?> value="KOH"
-           name="base"> KOH
+<form id="form" action="#" method="post" class="form-inline text-center">
+    <button type="button" class="btn btn-default" <?php echo Parser::getBase() == 'NaOH' ? 'checked="checked"' : ''; ?>
+            value="NaOH"
+            name="base">NaOH
+    </button>
+    <button type="button" class="btn btn-default" <?php echo Parser::getBase() == 'KOH' ? 'checked="checked"' : ''; ?>
+            value="KOH"
+            name="base">KOH
+    </button>
+
+    <p>Niezmydlonych olejów <input type="number">%</p>
+
     <h4>
         Wybierz kategorię, wpisz gramaturę <span class="glyphicon glyphicon-hand-down"
                                                  aria-hidden="true"></span> i

@@ -9,4 +9,11 @@ $(function () {
     })
 
     $('[data-toggle="popover"]').popover()
+
+
+    $('#form button').click(function () {
+            $('#form button').removeClass('disabled');
+            this.classList.add('disabled');
+        }
+    )
 })
