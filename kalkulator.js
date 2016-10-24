@@ -1,4 +1,5 @@
 $(function () {
+
     $('#form_tabs a').click(function (e) {
         e.preventDefault()
         $('#form_tabs li').removeClass('active');
@@ -6,4 +7,6 @@ $(function () {
         $('.form-group').hide();
         $('.form-group.' + $(this).attr('data-typ')).show();
     })
-});
+
+    $('[data-toggle="popover"]').popover()
+})
