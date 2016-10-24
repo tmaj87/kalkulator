@@ -26,27 +26,26 @@
     <div class="container-fluid">
 
         <a class="navbar-brand" href="#" data-container="body" data-toggle="popover" data-placement="bottom"
-           data-content="" title="Instrukcja obsługi" data-trigger="focus">Instrukcja <span
-                class="glyphicon glyphicon-hand-down"
-                aria-hidden="true"></span></a>
+           data-content="
+    1. Wybierz rodzaj zasady
+    2. Wskaż oczekiwaną ilość niezmydlonych tłuszczów (zaleca się 5-9%)
+    3. Podaj (w gramach) ilość składników (olejów, maseł...)
+    4. Kliknij przelicz
+        " title="Instrukcja obsługi" data-trigger="focus">Instrukcja <span
+            class="glyphicon glyphicon-hand-down"
+            aria-hidden="true"></span></a>
         <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Instrukcja</a>
-            </li>
+            Kalkulator Zmydlania
         </ul>
     </div>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <p>1. Wybierz zasadę</p>
-            <p>2. Wybierz procent zmydlenia*</p>
-            <p>3. ...</p>
-            <p>4. PROFIT</p>
-        </div>
-    </div>
-</div>
+<ul style="display: none">
+    <li>1. Wybierz rodzaj zasady</li>
+    <li>2. Wskaż oczekiwaną ilość niezmydlonych tłuszczów (zaleca się 5-9%)</li>
+    <li>3. Podaj (w gramach) ilość składników (olejów, maseł...)</li>
+    <li>4. Kliknij "przelicz"</li>
+</ul>
 
 <div class="container-fluid">
     <div class="row">
