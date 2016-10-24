@@ -10,16 +10,23 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <link href="kalkulator.css" rel="stylesheet">
 </head>
 <body>
 
 <nav class="navbar navbar-static-top navbar-inverse">
     <div class="container-fluid">
-        <a class="navbar-brand" href="?">Kalkulator Zmydlania</a>
+        <button class="navbar-brand" href="#" data-toggle="popover" title="Popover title"
+           data-content="And here's some amazing content. It's very engaging. Right?">Instrukcja <span
+                class="glyphicon glyphicon-hand-down"
+                aria-hidden="true"></span></button>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link" href="#">Instrukcja</a>
+                <a class="nav-link" href="#">Kalkulator Zmydlania</a>
             </li>
         </ul>
     </div>
@@ -50,7 +57,6 @@
     </div>
 </div>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="kalkulator.js"></script>
 
 </body>
