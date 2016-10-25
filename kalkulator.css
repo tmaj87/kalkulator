@@ -29,14 +29,24 @@ th {
 #form_tabs {
     font-size: 1.4em;
     margin-bottom: 0;
-    margin-top: 20px;
+    /*margin-top: 30px !important;*/
 }
 
 .navbar {
     color: white;
 }
 
+ul.li a {
+    color: #33004B !important;
+}
+
 .navbar-static-top {
+    background: #33004B;
+}
+
+
+.btn-primary:focus,
+.btn-primary {
     background: #33004B;
 }
 
