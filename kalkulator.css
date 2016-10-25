@@ -14,12 +14,13 @@ th {
 }
 
 #form_tabs {
-    margin-top: 10px;
     font-size: 1.4em;
+    margin: 4px auto;
+    width: 60%
 }
 
-.form_block {
-
+#form_tabs .active {
+    background: rgba(.3, .3, .3, .3);
 }
 
 .navbar {
