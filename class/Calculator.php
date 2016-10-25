@@ -11,17 +11,17 @@ class Calculator
     private $water_sum= 0;
     private $oil_sum = 0;
 
-    public function __construct($tablica, $typ)
+    public function __construct($array, $typ)
     {
-        $this->database = $this->sortByGram($tablica);
+        $this->database = $this->sortByGram($array);
         $this->base_type = $this->checkType($typ);
         $this->calculate();
     }
 
-    private function sortByGram($tablica)
+    private function sortByGram($array)
     {
-        uasort($tablica, array(__CLASS__, 'compare'));
-        return $tablica;
+        uasort($array, array(__CLASS__, 'compare'));
+        return $array;
     }
 
     private function calculate()
@@ -35,14 +35,14 @@ class Calculator
 
     public function oilTable()
     {
-        $tablica = array();
+        $array = array();
         foreach ($this->database as $oil => $row) {
-            $tablica[$oil] = array(
+            $array[$oil] = array(
                 'gram' => $row['gram'],
                 'percent' => round($row['gram'] / $this->oil_sum * 100)
             );
         }
-        return $tablica;
+        return $array;
     }
 
     public function requiredWater()
@@ -57,11 +57,11 @@ class Calculator
 
     public function saponificationChart()
     {
-        $tablica = array();
+        $array = array();
         for ($procent = 100; $procent >= 90; $procent--) {
-            $tablica[$procent] = round($this->base_sum * $procent / 100, 2);
+            $array[$procent] = round($this->base_sum * $procent / 100, 2);
         }
-        return $tablica;
+        return $array;
     }
 
     public function totalMass()
