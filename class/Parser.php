@@ -17,6 +17,7 @@ class Parser
             $record['rank'] = $rank;
             $array[$id] = $record;
         }
+        uasort($array, array(__CLASS__, 'compare'));
         return $array;
     }
 
@@ -39,5 +40,10 @@ class Parser
     static function getDatabase()
     {
         return json_decode(file_get_contents('baza_zmydlania.json'), true);
+    }
+
+    private static function compare($a, $b)
+    {
+        return strcmp($a['nazwa'], $b['nazwa']);
     }
 }
