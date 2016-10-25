@@ -1,6 +1,3 @@
-<!--    <div class="tab-content">-->
-<!--        <div role="tabpanel" class="tab-pane fade in active" id="home">...</div>-->
-
 <!--    btn-primary-->
 
 <table class="table table-striped">

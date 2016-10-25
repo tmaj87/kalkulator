@@ -1,12 +1,12 @@
 $(function () {
 
-    $('#form_tabs').find('a').click(function (e) {
-        e.preventDefault()
-        $('#form_tabs').find('li').removeClass('active');
-        $(this).offsetParent().toggleClass('active');
-        $('.form-group').hide();
-        $('.form-group.' + $(this).attr('data-typ')).show();
-    })
+    // $('#form_tabs').find('a').click(function (e) {
+    //     e.preventDefault()
+    //     $('#form_tabs').find('li').removeClass('active');
+    //     $(this).offsetParent().toggleClass('active');
+    //     $('.form-group').hide();
+    //     $('.form-group.' + $(this).attr('data-typ')).show();
+    // })
 
     $('[data-toggle="popover"]').popover()
 
