@@ -1,4 +1,4 @@
-<div class="row">
+
     <div class="buttons col-md-4 col-md-offset-1">
         <div class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
@@ -20,4 +20,3 @@
             <input type="number" class="form-control" placeholder="%" min="0" max="10">
         </div>
     </div>
-</div>

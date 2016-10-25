@@ -21,32 +21,24 @@
 <body>
 
 <nav class="navbar navbar-static-top navbar-inverse">
-    <div class="container-fluid">
-        <p class="navbar-header">
-            <a class="navbar-brand" href="#" data-container="body" data-html="true" data-toggle="popover"
-               data-placement="bottom"
-               data-content="<ul class=instr><h4>Instrukcja obsługi</h4>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#" data-container="body" data-html="true" data-toggle="popover"
+           data-placement="bottom"
+           data-content="<ul class=instr><h4>Instrukcja obsługi</h4>
     <li>Wybierz rodzaj zasady</li>
     <li>Wskaż oczekiwaną ilość niezmydlonych tłuszczów (zaleca się 5-9%)</li>
     <li>Podaj (w gramach) ilość składników (olejów, maseł...)</li>
     <li>Kliknij &quot;przelicz&quot;</li>
     </ul>
         " data-trigger="focus">Instrukcja <span
-                    class="glyphicon glyphicon-hand-down"
-                    aria-hidden="true"></span></a>
-        <h3 class="navbar-text navbar-right">
-            Kalkulator Zmydlania
-        </h3>
+                class="glyphicon glyphicon-hand-down"
+                aria-hidden="true"></span></a>
+
+        <span class="navbar-text navbar-right">
+        Kalkulator Zmydlania
+    </span>
     </div>
 </nav>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <?php Draw::Tables(); ?>
-        </div>
-    </div>
-</div>
 
 <?php Draw::Form(); ?>
 
