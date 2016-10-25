@@ -8,16 +8,16 @@ class Parser
         $array = array();
         foreach (self::getDatabase() as $record) {
             $id = self::getIdFor($record['nazwa']);
-            $rank = Rank::getFor($id);
+//            $rank = Rank::getFor($id);
 
             $oil_amount = self::getInputFor($id);
             if ($oil_amount < 1) continue;
 
             $record['gram'] = $oil_amount;
-            $record['rank'] = $rank;
+//            $record['rank'] = $rank;
             $array[$id] = $record;
         }
-        uasort($array, array(__CLASS__, 'compare'));
+        uasort($array, array(__CLASS__, 'compareName'));
         return $array;
     }
 
@@ -42,8 +42,31 @@ class Parser
         return json_decode(file_get_contents('baza_zmydlania.json'), true);
     }
 
+    static function getTabDataFor($type)
+    {
+        $array = array();
+        foreach (self::getDatabase() as $record) {
+            if (self::normalise($record['typ']) == $type) {
+                $name = $record['nazwa'];
+                $id = self::getIdFor($name);
+                $array[$id] = $name;
+            }
+        }
+        uasort($array, array(__CLASS__, 'compare'));
+        return $array;
+    }
+
     private static function compare($a, $b)
     {
+        return strcmp($a, $b);
+    }
+
+    private static function compareName($a, $b)
+    {
         return strcmp($a['nazwa'], $b['nazwa']);
+    }
+
+    private static function normalise($string) {
+        return iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $string);
     }
 }
