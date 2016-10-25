@@ -39,35 +39,30 @@
     </h4>
 
 
-    <div style="">
+    <table class="table table-striped">
+        <tbody>
         <?php foreach (Parser::getDatabase() as $record) {
             $id = Parser::getIdFor($record['nazwa']);
             $isActive = !empty($form_data[$id]['gram']);
             ?>
 
-            <div class="btn-group btn-group-justified" role="group">
-                <div class="form-group form-group-lg row text-left">
-                    <div class="btn-group" role="group">
-                        <label for="<?php echo $id; ?>"
-                               class="col-lg-2 col-form-label"><?php echo $record['nazwa']; ?></label>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <div class="col-lg-8">
-                            <input class="form-control col-lg-2 <?php echo $isActive ? ' focus' : ''; ?>"
-                                   type="number"
-                                   style="width: 90px"
-                                   name="<?php echo $id; ?>" min="1"
-                                   value="<?php echo $form_data[$id]['gram']; ?>"/>
-                            <label for="<?php echo $id; ?>" class="control-label text-right">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <tr class="form_block <?php echo $record['typ']; ?>
+                    <?php echo $isActive ? '' : ' style="display: none;"'; ?>">
 
-            <div class="form_block form-group row <?php echo $record['typ']; ?>"
-                <?php echo $isActive ? '' : ' style="display: none;"'; ?>
-            >
-            </div>
+                <td>
+                    <label for="<?php echo $id; ?>"
+                           class="col-lg-2 col-form-label"><?php echo $record['nazwa']; ?></label>
+                </td>
+                <td>
+                    <input class="form-control col-lg-2 <?php echo $isActive ? ' focus' : ''; ?>"
+                           type="number"
+                           style="width: 90px"
+                           name="<?php echo $id; ?>" min="1"
+                           value="<?php echo $form_data[$id]['gram']; ?>"/>
+                    <label for="<?php echo $id; ?>" class="control-label text-right">
+                </td>
+            </tr>
         <?php } ?>
-    </div>
+        </tbody>
+    </table>
 </form>
