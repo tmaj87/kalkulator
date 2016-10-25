@@ -13,14 +13,18 @@ th {
     outline: 0 none;
 }
 
-#form_tabs {
-    font-size: 1.4em;
+.form_column {
     margin: 4px auto;
     width: 60%
 }
 
-#form_tabs .active {
-    background: rgba(.3, .3, .3, .3);
+#new_look {
+    border: 1px solid rgb(221, 221, 221);
+    border-top: 0;
+}
+
+#form_tabs {
+    font-size: 1.4em;
 }
 
 .navbar {

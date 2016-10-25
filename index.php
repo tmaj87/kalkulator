@@ -49,7 +49,12 @@
     </div>
 </div>
 
-<?php Draw::Form(); ?>
+<form id="form" action="index.php" method="post" class="form-inline text-center">
+    <?php Draw::BaseButtons(); ?>
+    <?php Draw::Tabs(); ?>
+    <?php Draw::NewLook(); ?>
+    <?php Draw::TabContent(); ?>
+</form>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

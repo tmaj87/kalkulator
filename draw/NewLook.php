@@ -1,4 +1,4 @@
-<div class="tab-content">
+<div id="new_look" class="tab-content form_column">
     <div class="tab-pane fade" id="oleje">
         abc123
     </div>
