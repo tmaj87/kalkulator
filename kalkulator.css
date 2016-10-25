@@ -18,10 +18,12 @@ th {
     width: 60%
 }
 
-#form_content {
-    border-left: 1px solid rgb(221, 221, 221);
-    border-right: 1px solid rgb(221, 221, 221);
+.form_content {
     margin-top: 0;
+}
+
+.form_content td {
+    border-top: 0 !important;
 }
 
 #form_tabs {
