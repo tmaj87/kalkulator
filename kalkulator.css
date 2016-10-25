@@ -13,6 +13,11 @@ th {
     outline: 0 none;
 }
 
+#form_tabs {
+    margin-top: 10px;
+    font-size: 1.4em;
+}
+
 .form_block {
 
 }

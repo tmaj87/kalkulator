@@ -47,13 +47,9 @@
             <?php Draw::Tables(); ?>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <?php Draw::Form(); ?>
-        </div>
-    </div>
 </div>
+
+<?php Draw::Form(); ?>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
