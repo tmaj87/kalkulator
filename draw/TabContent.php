@@ -1,4 +1,4 @@
-<div id="new_look" class="tab-content form_column">
+<div id="form_content" class="tab-content form_column">
     <div role="tabpanel" class="tab-pane fade" id="oleje">
         <table class="table table-striped">
             <tbody>
@@ -12,16 +12,15 @@
                     <?php echo $isActive ? '' : ' style="display: none;"'; ?>">
 
                     <td>
-                        <label for="<?php echo $id; ?>"
-                               class="col-lg-2 col-form-label"><?php echo $record['nazwa']; ?></label>
-                    </td>
-                    <td>
-                        <input class="form-control col-lg-2 <?php echo $isActive ? ' focus' : ''; ?>"
+                        <input class="form-control <?php echo $isActive ? ' focus' : ''; ?>"
                                type="number"
                                style="width: 90px"
                                name="<?php echo $id; ?>" min="1"
                                value="<?php echo $form_data[$id]['gram']; ?>"/>
-                        <label for="<?php echo $id; ?>" class="control-label text-right">
+                    </td>
+
+                    <td class="text-left">
+                        <label for="<?php echo $id; ?>" class="col-form-label"><?php echo $record['nazwa']; ?></label>
                     </td>
                 </tr>
             <?php } ?>

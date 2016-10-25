@@ -18,13 +18,16 @@ th {
     width: 60%
 }
 
-#new_look {
-    border: 1px solid rgb(221, 221, 221);
+#form_content {
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
     border-top: 0;
+    margin-top: 0;
 }
 
 #form_tabs {
     font-size: 1.4em;
+    margin-bottom: 0;
 }
 
 .navbar {
