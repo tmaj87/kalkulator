@@ -1,14 +1,33 @@
 <form id="form" action="#" method="post" class="form-inline text-center">
-    <button type="button" class="btn btn-default" <?php echo Parser::getBase() == 'NaOH' ? 'checked="checked"' : ''; ?>
-            value="NaOH"
-            name="base">NaOH
-    </button>
-    <button type="button" class="btn btn-default" <?php echo Parser::getBase() == 'KOH' ? 'checked="checked"' : ''; ?>
-            value="KOH"
-            name="base">KOH
-    </button>
 
-    <p>Niezmydlonych olejów <input type="number">%</p>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="btn-group btn-group-justified" role="group" aria-label="">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary btn-lg"
+                            value="NaOH"
+                            name="base">NaOH
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-lg"
+                            value="KOH"
+                            name="base">KOH
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="sizing-addon1">Niezmydlonych olejów</span>
+                <input type="number" class="form-control" placeholder="%" aria-describedby="sizing-addon1">
+            </div>
+            <p>Niezmydlonych olejów <input type="number">%</p>
+        </div>
+    </div>
+
 
     <h4>
         Wybierz kategorię, wpisz gramaturę <span class="glyphicon glyphicon-hand-down"

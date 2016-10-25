@@ -2,7 +2,6 @@
 
 class Calculator
 {
-
     const WATER_PER_GRAM = .335;
 
     private $database = array();

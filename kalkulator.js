@@ -12,8 +12,8 @@ $(function () {
 
 
     $('#form button').click(function () {
-            $('#form button').removeClass('disabled');
-            this.classList.add('disabled');
+            $('#form button').removeClass('btn-primary');
+            this.classList.add('btn-primary');
         }
     )
 })

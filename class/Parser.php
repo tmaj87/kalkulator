@@ -3,7 +3,7 @@
 class Parser
 {
 
-    static function parseDatabase()
+    static function parsePostInput()
     {
         $array = array();
         foreach (self::getDatabase() as $record) {
