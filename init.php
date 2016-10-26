@@ -9,4 +9,4 @@ function __autoload($class)
 
 // global variables
 $form_data = Parser::parsePostInput();
-$calculator = new Calculator($form_data, Parser::getBase());
+$calculator = new Calculator($form_data, Parser::getPostSanitizeString('base'));

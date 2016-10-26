@@ -26,7 +26,7 @@
     <div class="col-md-4">
         <table id="zasada" class="table table-hover">
             <tr>
-                <th><?php echo Parser::getBase(); ?> (g)</th>
+                <th><?php echo Parser::getPostSanitizeString('base'); ?> (g)</th>
                 <th>Zmydlenie (%)</th>
             </tr>
             <?php foreach ($calculator->saponificationChart() as $percent => $gram) { ?>

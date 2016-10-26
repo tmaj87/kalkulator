@@ -3,6 +3,9 @@
 class Parser
 {
 
+    private static $database_file = 'baza_zmydlania.json';
+    private static $cached_database;
+
     static function parsePostInput() : array
     {
         $array = array();
@@ -10,36 +13,38 @@ class Parser
             $id = self::getIdFor($record['nazwa']);
 //            $rank = Rank::getFor($id);
 
-            $oil_amount = self::getInputFor($id);
+            $oil_amount = self::getPostSanitizeInt($id);
             if ($oil_amount < 1) continue;
 
             $record['gram'] = $oil_amount;
 //            $record['rank'] = $rank;
             $array[$id] = $record;
         }
-        uasort($array, array(__CLASS__, 'compareName'));
+        uasort($array, array(__CLASS__, 'compareByNazwa'));
         return $array;
     }
 
-    static function getInputFor(string $name) : string
+    static function getPostSanitizeInt(string $name) : int
     {
-        return filter_input(INPUT_POST, $name, FILTER_SANITIZE_NUMBER_INT);
+        return intval(filter_input(INPUT_POST, $name, FILTER_SANITIZE_NUMBER_INT)) ?? 0;
     }
 
-    static function getBase() : string
+    static function getPostSanitizeString(string $name) : string
     {
-        return filter_input(INPUT_POST, 'base', FILTER_SANITIZE_STRING);
+        return filter_input(INPUT_POST, $name, FILTER_SANITIZE_STRING) ?? '';
     }
 
     static function getIdFor(string $name) : string
     {
-        $string = strtr($name, array(' ' => ''));
-        return base64_encode($string);
+        return base64_encode(self::stripSpaces($name));
     }
 
     static function getDatabase() : array
     {
-        return json_decode(file_get_contents('baza_zmydlania.json'), true);
+        if (empty(self::$cached_database)) {
+            self::$cached_database = json_decode(file_get_contents(self::$database_file), true);
+        }
+        return self::$cached_database;
     }
 
     static function getTabDataFor(string $type) : array
@@ -52,18 +57,23 @@ class Parser
                 $array[$id] = $name;
             }
         }
-        uasort($array, array(__CLASS__, 'compare'));
+        uasort($array, array(__CLASS__, 'stringCompare'));
         return $array;
     }
 
-    private static function compare($a, $b)
+    private static function stringCompare(string $a, string $b) : int
     {
         return strcmp($a, $b);
     }
 
-    private static function compareName($a, $b)
+    private static function compareByNazwa(array $a, array $b) : int
     {
         return strcmp($a['nazwa'], $b['nazwa']);
+    }
+
+    private static function stripSpaces(string $string) : string
+    {
+        return strtr($string, array(' ' => ''));
     }
 
     private static function normalise(string $string) : string
