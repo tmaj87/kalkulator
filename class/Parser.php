@@ -3,7 +3,7 @@
 class Parser
 {
 
-    static function parsePostInput()
+    static function parsePostInput() : array
     {
         $array = array();
         foreach (self::getDatabase() as $record) {
@@ -21,28 +21,28 @@ class Parser
         return $array;
     }
 
-    static function getInputFor($name)
+    static function getInputFor(string $name) : string
     {
         return filter_input(INPUT_POST, $name, FILTER_SANITIZE_NUMBER_INT);
     }
 
-    static function getBase()
+    static function getBase() : string
     {
         return filter_input(INPUT_POST, 'base', FILTER_SANITIZE_STRING);
     }
 
-    static function getIdFor($name)
+    static function getIdFor(string $name) : string
     {
         $string = strtr($name, array(' ' => ''));
         return base64_encode($string);
     }
 
-    static function getDatabase()
+    static function getDatabase() : array
     {
         return json_decode(file_get_contents('baza_zmydlania.json'), true);
     }
 
-    static function getTabDataFor($type)
+    static function getTabDataFor(string $type) : array
     {
         $array = array();
         foreach (self::getDatabase() as $record) {
@@ -66,7 +66,8 @@ class Parser
         return strcmp($a['nazwa'], $b['nazwa']);
     }
 
-    private static function normalise($string) {
+    private static function normalise(string $string) : string
+    {
         return iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $string);
     }
 }

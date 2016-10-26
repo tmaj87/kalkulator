@@ -17,7 +17,7 @@ class Draw
         }
     }
 
-    private static function replace($string)
+    private static function replace(string $string) : string
     {
         return preg_replace(self::FROM, self::TO, $string);
     }

@@ -7,17 +7,17 @@ class Calculator
     private $database = array();
     private $base_sum = 0;
     private $base_type = 'NaOH';
-    private $water_sum= 0;
+    private $water_sum = 0;
     private $oil_sum = 0;
 
-    public function __construct($array, $typ)
+    public function __construct(array $array, string $typ)
     {
         $this->database = $this->sortByGram($array);
         $this->base_type = $this->checkType($typ);
         $this->calculate();
     }
 
-    private function sortByGram($array)
+    private function sortByGram(array $array) : array
     {
         uasort($array, array(__CLASS__, 'compare'));
         return $array;
@@ -32,7 +32,7 @@ class Calculator
         }
     }
 
-    public function oilTable()
+    public function oilTable() : array
     {
         $array = array();
         foreach ($this->database as $oil => $row) {
@@ -44,17 +44,17 @@ class Calculator
         return $array;
     }
 
-    public function requiredWater()
+    public function requiredWater() : int
     {
         return round($this->water_sum);
     }
 
-    public function oilSum()
+    public function oilSum() : int
     {
         return round($this->oil_sum);
     }
 
-    public function saponificationChart()
+    public function saponificationChart() : array
     {
         $array = array();
         for ($procent = 100; $procent >= 90; $procent--) {
@@ -63,12 +63,12 @@ class Calculator
         return $array;
     }
 
-    public function totalMass()
+    public function totalMass() : int
     {
         return round($this->oil_sum + $this->water_sum + $this->base_sum);
     }
 
-    public function inci()
+    public function inci() : string
     {
         $string = "";
         foreach ($this->database as $oil => $row) {
@@ -79,13 +79,10 @@ class Calculator
 
     private function compare($a, $b)
     {
-        if ($a['gram'] == $b['gram']) {
-            return 0;
-        }
-        return ($a['gram'] > $b['gram']) ? -1 : 1;
+        return $a['gram'] <=> $b['gram'];
     }
 
-    private function checkType($typ)
+    private function checkType(string $typ) : string
     {
         switch ($typ) {
             case 'KOH':
