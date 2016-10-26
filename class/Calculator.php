@@ -19,7 +19,7 @@ class Calculator
 
     private function sortByGram(array $array) : array
     {
-        uasort($array, array(__CLASS__, 'compare'));
+        uasort($array, array(__CLASS__, 'compareGram'));
         return $array;
     }
 
@@ -57,8 +57,8 @@ class Calculator
     public function saponificationChart() : array
     {
         $array = array();
-        for ($procent = 100; $procent >= 90; $procent--) {
-            $array[$procent] = round($this->base_sum * $procent / 100, 2);
+        for ($percent = 100; $percent >= 90; $percent--) {
+            $array[$percent] = round($this->base_sum * $percent / 100, 2);
         }
         return $array;
     }
@@ -77,7 +77,7 @@ class Calculator
         return $string;
     }
 
-    private function compare($a, $b)
+    private function compareGram($a, $b)
     {
         return $a['gram'] <=> $b['gram'];
     }
