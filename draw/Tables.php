@@ -2,13 +2,13 @@
     <div class="col-md-4 col-md-offset-2">
         <table id="oleje" class="table table-hover">
             <tr>
-                <th>Tłuszcz</th>
+                <th style="width: 50%"></th>
                 <th>Waga (g)</th>
                 <th>Udział (%)</th>
             </tr>
             <?php foreach ($calculator->oilTable() as $key => $row) { ?>
                 <tr>
-                    <td><?php echo $form_data[$key]['nazwa']; ?></td>
+                    <td><?php echo $row['typ'] . ' ' . $form_data[$key]['nazwa']; ?></td>
                     <td><?php echo $row['gram']; ?>g</td>
                     <td><?php echo $row['percent']; ?>%</td>
                 </tr>
@@ -19,23 +19,26 @@
                 <td></td>
             </tr>
         </table>
-        <h4>Należy również dodać <b><?php echo $calculator->requiredWater(); ?>g</b> wody.</h4>
+
         <p>inci: <?php echo $calculator->inci(); ?></p>
+
     </div>
 
-    <div class="col-md-4">
-        <table id="zasada" class="table table-hover">
-            <tr>
-                <th><?php echo Parser::getPostSanitizeString('base'); ?> (g)</th>
-                <th>Zmydlenie (%)</th>
-            </tr>
-            <?php foreach ($calculator->saponificationChart() as $percent => $gram) { ?>
-                <tr>
-                    <td><?php echo $gram; ?>g</td>
-                    <td><?php echo $percent; ?>%</td>
-                </tr>
-            <?php } ?>
-        </table>
-        <h4>Całkowita masa mydła to ok. <b><?php echo $calculator->totalMass(); ?>g</b></h4>
+    <div class="col-md-6" style="font-size: 1.4em;">
+        <p>
+            Należy również dodać <b><?php echo $calculator->requiredBase(); ?></b>
+            gramów <?php echo Parser::getPostSanitizeString('base'); ?>
+        </p>
+
+        <p>
+            Rozposzczonych w <b><?php echo $calculator->requiredWater(); ?></b> gramach wody
+        </p>
+
+        <p>
+            Całkowita masa otrzymanego mydła
+            <b><?php echo $calculator->totalMass(); ?></b> gram
+        </p>
+
+
     </div>
 </div>

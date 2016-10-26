@@ -7,7 +7,10 @@
                 <?php foreach (Parser::getTabDataFor($type) as $id => $name) { ?>
                     <tr>
                         <td style="width: 20%; text-align: right">
-                            <input class="form-control" style="width: 110px" type="number" name="<?php echo $id; ?>" min="1">
+                            <input class="form-control" value="<?php echo $form_data[$id]['gram']; ?>"
+                                   style="width: 110px" type="number"
+                                   name="<?php echo $id; ?>"
+                                   min="1">
                         </td>
                         <td class="text-left">
                             <label for="<?php echo $id; ?>" class="col-form-label"><?php echo $name; ?></label>

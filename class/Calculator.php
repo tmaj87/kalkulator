@@ -9,11 +9,13 @@ class Calculator
     private $base_type = 'NaOH';
     private $water_sum = 0;
     private $oil_sum = 0;
+    private $percent = 6;
 
-    public function __construct(array $array, string $typ)
+    public function __construct(array $array, string $type, int $percent)
     {
+        $this->percent = $percent;
         $this->database = $this->sortByGram($array);
-        $this->base_type = $this->checkType($typ);
+        $this->base_type = $this->checkType($type);
         $this->calculate();
     }
 
@@ -25,10 +27,10 @@ class Calculator
 
     private function calculate()
     {
-        foreach ($this->database as $olej => $ile) {
-            $this->oil_sum += $ile['gram'];
-            $this->base_sum += $ile['gram'] * $ile[$this->base_type];
-            $this->water_sum += $ile['gram'] * self::WATER_PER_GRAM;
+        foreach ($this->database as $key => $array) {
+            $this->oil_sum += $array['gram'];
+            $this->base_sum += $array['gram'] * $array[$this->base_type];
+            $this->water_sum += $array['gram'] * self::WATER_PER_GRAM;
         }
     }
 
@@ -37,6 +39,7 @@ class Calculator
         $array = array();
         foreach ($this->database as $oil => $row) {
             $array[$oil] = array(
+                'typ' => $row['typ'],
                 'gram' => $row['gram'],
                 'percent' => round($row['gram'] / $this->oil_sum * 100)
             );
@@ -49,23 +52,19 @@ class Calculator
         return round($this->water_sum);
     }
 
+    public function requiredBase() : float
+    {
+        return round($this->base_sum * $this->percent / 100, 2);
+    }
+
     public function oilSum() : int
     {
         return round($this->oil_sum);
     }
 
-    public function saponificationChart() : array
+    public function totalMass() : float
     {
-        $array = array();
-        for ($percent = 100; $percent >= 90; $percent--) {
-            $array[$percent] = round($this->base_sum * $percent / 100, 2);
-        }
-        return $array;
-    }
-
-    public function totalMass() : int
-    {
-        return round($this->oil_sum + $this->water_sum + $this->base_sum);
+        return round($this->oil_sum + $this->water_sum + $this->base_sum, 2);
     }
 
     public function inci() : string

@@ -10,7 +10,7 @@
     <!--    <link href="offline/bootstrap.min.css" rel="stylesheet">-->
     <!--    <script src="offline/jquery-3.1.1.min.js"></script>-->
     <!--    <script src="offline/bootstrap.min.js"></script>-->
-    <link rel='stylesheet' id='twentythirteen-fonts-css'
+    <link rel='stylesheet'
           href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&#038;subset=latin%2Clatin-ext'
           type='text/css' media='all'/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
@@ -22,9 +22,7 @@
 
 <?php
 Draw::Navbar();
-if (!empty($form_data)) {
-    Draw::Tables();
-}
+Draw::Tables();
 Draw::Form();
 ?>
 
