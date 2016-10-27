@@ -49,22 +49,22 @@ class Calculator
 
     public function requiredWater() : int
     {
-        return round($this->water_sum);
+        return $this->water_sum;
     }
 
     public function requiredBase() : float
     {
-        return round($this->base_sum * $this->percent / 100, 2);
+        return $this->base_sum * 1 - $this->percent / 100;
     }
 
     public function oilSum() : int
     {
-        return round($this->oil_sum);
+        return $this->oil_sum;
     }
 
     public function totalMass() : float
     {
-        return round($this->oil_sum + $this->water_sum + $this->base_sum, 2);
+        return $this->oil_sum + $this->water_sum + $this->base_sum;
     }
 
     public function inci() : string

@@ -57,13 +57,8 @@ class Parser
                 $array[$id] = $name;
             }
         }
-        uasort($array, array(__CLASS__, 'stringCompare'));
+        asort($array);
         return $array;
-    }
-
-    private static function stringCompare(string $a, string $b) : int
-    {
-        return strcmp($a, $b);
     }
 
     private static function compareByNazwa(array $a, array $b) : int
@@ -78,6 +73,6 @@ class Parser
 
     private static function normalise(string $string) : string
     {
-        return iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $string);
+        return strtr($string, array('ł' =>'l'));
     }
 }
