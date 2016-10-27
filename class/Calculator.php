@@ -4,19 +4,17 @@ class Calculator
 {
     const WATER_PER_GRAM = .335;
 
-    private $database = array();
+    private $input = array();
     private $base_sum = 0;
     private $base_type = 'NaOH';
     private $water_sum = 0;
     private $oil_sum = 0;
-    private $percent = 6;
 
-    public function __construct(array $array, string $type, int $percent)
+    public function __construct(array $inputForm, string $type, int $percent)
     {
-        $this->percent = $percent;
-        $this->database = $this->sortByGram($array);
+        $this->input = $this->sortByGram($inputForm);
         $this->base_type = $this->checkType($type);
-        $this->calculate();
+        $this->calculateFor($percent);
     }
 
     private function sortByGram(array $array) : array
@@ -25,19 +23,20 @@ class Calculator
         return $array;
     }
 
-    private function calculate()
+    private function calculateFor(int $percent)
     {
-        foreach ($this->database as $key => $array) {
+        foreach ($this->input as $key => $array) {
             $this->oil_sum += $array['gram'];
             $this->base_sum += $array['gram'] * $array[$this->base_type];
             $this->water_sum += $array['gram'] * self::WATER_PER_GRAM;
         }
+        $this->base_sum *= 1 - $percent / 100;
     }
 
     public function oilTable() : array
     {
         $array = array();
-        foreach ($this->database as $oil => $row) {
+        foreach ($this->input as $oil => $row) {
             $array[$oil] = array(
                 'typ' => $row['typ'],
                 'gram' => $row['gram'],
@@ -54,7 +53,7 @@ class Calculator
 
     public function requiredBase() : float
     {
-        return $this->base_sum * 1 - $this->percent / 100;
+        return $this->base_sum;
     }
 
     public function oilSum() : int
@@ -70,20 +69,20 @@ class Calculator
     public function inci() : string
     {
         $string = "";
-        foreach ($this->database as $oil => $row) {
+        foreach ($this->input as $oil => $row) {
             $string .= $row['inci'];
         }
         return $string;
     }
 
-    private function compareGram($a, $b)
+    private function compareGram(array $a, array $b) : int
     {
         return $a['gram'] <=> $b['gram'];
     }
 
-    private function checkType(string $typ) : string
+    private function checkType(string $type) : string
     {
-        switch ($typ) {
+        switch ($type) {
             case 'KOH':
                 return 'KOH';
             default:
