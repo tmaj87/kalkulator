@@ -22,7 +22,9 @@
 
 <?php
 Draw::Navbar();
-Draw::Tables();
+if (!empty($form_data)) {
+    Draw::Tables();
+}
 Draw::Form();
 ?>
 

@@ -19,26 +19,23 @@
                 <td></td>
             </tr>
         </table>
-
-        <p>inci: <?php echo $calculator->inci(); ?></p>
-
     </div>
 
-    <div class="col-md-6" style="font-size: 1.4em;">
-        <p>
-            Należy również dodać <b><?php echo $calculator->requiredBase(); ?></b>
-            gramów <?php echo Parser::getPostSanitizeString('base'); ?>
-        </p>
+    <div class="col-md-5">
+        <div class="results">
+            <p>
+                Należy również dodać <b><?php echo $calculator->requiredBase(); ?></b> gramów NaOH
+            </p>
 
-        <p>
-            Rozposzczonych w <b><?php echo $calculator->requiredWater(); ?></b> gramach wody
-        </p>
+            <p>
+                Rozposzczonych w <b><?php echo $calculator->requiredWater(); ?></b> gramach wody
+            </p>
 
-        <p>
-            Całkowita masa otrzymanego mydła
-            <b><?php echo $calculator->totalMass(); ?></b> gram
-        </p>
-
-
+            <p>
+                Całkowita masa otrzymanego mydła ok.
+                <b><?php echo $calculator->totalMass(); ?></b> gram
+            </p>
+        </div>
+        <p>inci: <?php echo $calculator->inci(); ?></p>
     </div>
 </div>

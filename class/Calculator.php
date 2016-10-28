@@ -13,8 +13,9 @@ class Calculator
     public function __construct(array $inputForm, string $type, int $percent)
     {
         $this->input = $this->sortByGram($inputForm);
-        $this->base_type = $this->checkType($type);
-        $this->calculateFor($percent);
+        $this->setType($type);
+        $this->calculate();
+        $this->applyPercent($percent);
     }
 
     private function sortByGram(array $array) : array
@@ -23,14 +24,13 @@ class Calculator
         return $array;
     }
 
-    private function calculateFor(int $percent)
+    private function calculate()
     {
         foreach ($this->input as $key => $array) {
             $this->oil_sum += $array['gram'];
             $this->base_sum += $array['gram'] * $array[$this->base_type];
             $this->water_sum += $array['gram'] * self::WATER_PER_GRAM;
         }
-        $this->base_sum *= 1 - $percent / 100;
     }
 
     public function oilTable() : array
@@ -53,7 +53,7 @@ class Calculator
 
     public function requiredBase() : float
     {
-        return $this->base_sum;
+        return round($this->base_sum, 2);
     }
 
     public function oilSum() : int
@@ -61,15 +61,18 @@ class Calculator
         return $this->oil_sum;
     }
 
-    public function totalMass() : float
+    public function totalMass() : int
     {
-        return $this->oil_sum + $this->water_sum + $this->base_sum;
+        return ceil($this->oil_sum + $this->water_sum + $this->base_sum);
     }
 
     public function inci() : string
     {
         $string = "";
         foreach ($this->input as $oil => $row) {
+            if (strlen($string) > 0) {
+                $string .= ', ';
+            }
             $string .= $row['inci'];
         }
         return $string;
@@ -80,13 +83,15 @@ class Calculator
         return $a['gram'] <=> $b['gram'];
     }
 
-    private function checkType(string $type) : string
+    private function setType(string $type)
     {
-        switch ($type) {
-            case 'KOH':
-                return 'KOH';
-            default:
-                return $this->base_type;
+        if ($type == 'KOH') {
+            $this->base_type = 'KOH';
         }
+    }
+
+    private function applyPercent(int $percent)
+    {
+        $this->base_sum *= 1 - $percent / 100;
     }
 }

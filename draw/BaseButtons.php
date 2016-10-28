@@ -1,21 +1,18 @@
-<div class="buttons col-md-4 col-md-offset-1">
-    <div class="btn-group btn-group-justified" role="group">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary btn-lg"
-                    name="base">NaOH
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-lg"
-                    name="base">KOH
-            </button>
-        </div>
+<div class="buttons row">
+    <div class="col-md-4 col-md-offset-1 ">
+        <input type="button" class="btn btn-primary"
+               name="base"
+               value="NaOH">
+        <input type="button" class="btn"
+               name="base"
+               value="KOH">
     </div>
 </div>
 
-<div class="col-md-7">
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon1">Niezmydlonych olejów</span>
-        <input type="number" class="form-control" placeholder="%" min="0" max="10">
+<div class="row percent">
+    <div class="col-md-offset-4 col-md-7">
+        <label for="percent">Niezmydlonych olejów</label>
+        <input type="number" value="<?php echo Parser::getPostSanitizeString('percent'); ?>" name="percent"
+               class="form-control" min="0" max="10">%
     </div>
 </div>

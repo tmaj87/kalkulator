@@ -44,7 +44,6 @@ ul.li a {
     background: #33004B;
 }
 
-
 .btn-primary:focus,
 .btn-primary {
     background: #33004B;
@@ -62,4 +61,42 @@ h3.navbar-right {
 
 .instr li::first-letter {
     font-size: 1.1em;
+}
+
+.percent,
+.buttons {
+    margin-bottom: 6px;
+}
+
+.buttons input[type=button] {
+    width: 120px;
+    border: 1px solid black;
+}
+
+.buttons input[type=button]:nth-of-type(1) {
+    margin-right: 20px;
+}
+
+.buttons input[type=button]:nth-of-type(2) {
+    margin-left: 20px;
+}
+
+form {
+    margin-top: 40px;
+}
+
+.results {
+    font-size: 1.4em;
+    border: 1px solid black;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 15px
+}
+
+.results p>b {
+    border: 1px solid #33004B;
+    border-radius: 6px;
+    padding: 0 12px;
 }

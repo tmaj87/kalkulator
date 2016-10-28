@@ -11,8 +11,8 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 
 
-    $('#form').find('.buttons button').click(function () {
-            $('#form').find('.buttons button').removeClass('btn-primary');
+    $('#form').find('.buttons input').click(function () {
+            $('#form').find('.buttons input').removeClass('btn-primary');
             this.classList.add('btn-primary');
         }
     )

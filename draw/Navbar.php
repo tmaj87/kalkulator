@@ -12,8 +12,8 @@
                 class="glyphicon glyphicon-hand-down"
                 aria-hidden="true"></span></a>
 
-        <span class="navbar-text navbar-right">
-        Kalkulator Zmydlania
-    </span>
+        <div style="right: 10px; position: absolute; font-size: 2.2em">
+            <a style="color: white; text-decoration: none" href="?">Kalkulator Zmydlania</a>
+        </div>
     </div>
 </nav>
