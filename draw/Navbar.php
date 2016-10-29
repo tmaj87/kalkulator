@@ -1,6 +1,9 @@
+<div class="overlay"></div>
+
 <nav class="navbar navbar-static-top navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-container="body" data-html="true" data-toggle="popover"
+        <a style="color: white" class="navbar-brand pop" href="#" data-container="body" data-html="true"
+           data-toggle="popover"
            data-placement="bottom"
            data-content="<ul class=instr><h4>Instrukcja obsługi</h4>
     <li>Wybierz rodzaj zasady</li>

@@ -4,5 +4,5 @@
     <li role="presentation"><a href="#maslo" aria-controls="settings" role="tab" data-toggle="tab">Masła</a></li>
     <li role="presentation"><a href="#wosk" aria-controls="settings" role="tab" data-toggle="tab">Woski</a></li>
     <li role="presentation"><a href="#kwas" aria-controls="settings" role="tab" data-toggle="tab">Kwasy</a></li>
-    <li><input style="margin-left: 100px" class="navbar-brand btn" type="submit" value="Przelicz"></li>
+    <li><input style="margin-left: 100px; margin-top: 4px" class="btn btn-primary" type="submit" value="Przelicz"></li>
 </ul>

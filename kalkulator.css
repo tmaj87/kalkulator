@@ -46,7 +46,7 @@ ul.li a {
 
 .btn-primary:focus,
 .btn-primary {
-    background: #33004B;
+    background: #855FA8;
 }
 
 h3.navbar-right {
@@ -68,6 +68,7 @@ h3.navbar-right {
     margin-bottom: 6px;
 }
 
+.btn,
 .buttons input[type=button] {
     width: 120px;
     border: 1px solid black;
@@ -95,8 +96,17 @@ form {
     padding-bottom: 15px
 }
 
-.results p>b {
+.results p > b {
     border: 1px solid #33004B;
     border-radius: 6px;
     padding: 0 12px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: none;
 }
